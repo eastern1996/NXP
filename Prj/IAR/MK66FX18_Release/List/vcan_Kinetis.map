@@ -1,0 +1,292 @@
+###############################################################################
+#
+# IAR ELF Linker V8.11.3.13950/W32 for ARM                25/Mar/2018  18:56:42
+# Copyright 2007-2017 IAR Systems AB.
+#
+#    Output file  =  
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Exe\vcan_Kinetis.out
+#    Map file     =  
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\List\vcan_Kinetis.map
+#    Command line =  
+#        -f C:\Users\llj\AppData\Local\Temp\EW950A.tmp
+#        (F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\diskio.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\ff.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\main.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\misc.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\MK66_adc.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\MK66_conf.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\MK66_dma.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\MK66_flexbus.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\MK66_gpio.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\MK66_i2c.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\MK66_it.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\MK66_port.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\MK66_rtc.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\MK66_sdhc.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\MK66_spi.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\MK66_uart.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\MK66_wdog.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\startup_MK66FX18.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\system_MK66FX18.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\VCAN_BMP.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\VCAN_computer.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\vcan_img2sd.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\VCAN_key.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\VCAN_key_event.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\VCAN_LCD_ILI9325.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\VCAN_LCD_ILI9341.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\VCAN_LCD_ST7735R.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\VCAN_LCD_ST7735S.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\VCAN_LED.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\VCAN_MMA7455.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\VCAN_NRF24L0.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\VCAN_NRF24L0_MSG.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\VCAN_OV7725_Eagle.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\VCAN_RTC_count.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\VCAN_SCCB.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\vcan_sd_app.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\Vcan_touch.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\VCAN_TSL1401.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\VCAN_UI_VAR.o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj\vectors.o
+#        --redirect _Printf=_PrintfLargeNoMb --redirect _Scanf=_ScanfLargeNoMb
+#        -o
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Exe\vcan_Kinetis.out
+#        --map
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\List\vcan_Kinetis.map
+#        --config
+#        "F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\config
+#        files\vcan_ROM_K66X1M.icf"
+#        F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\..\..\Lib\CMSIS\iar_cortexM4l_math.a
+#        --entry __iar_program_start --redirect __write=__write_buffered
+#        --inline --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x00010000 { ro section .intvec };
+"A1":  place at 0x00010410 { ro section .noinit };
+define block CodeRelocate { section .textrw_init };
+"P1":  place in [from 0x00010000 to 0x00100000] { ro, block CodeRelocate };
+define block CodeRelocateRam { section .textrw };
+define block CSTACK with size = 4K, alignment = 8 { };
+define block HEAP with size = 512, alignment = 8 { };
+"P2":  place in [from 0x1fff0410 to 0x20030000] {
+          rw, block CodeRelocateRam, block CSTACK, block HEAP };
+initialize manually with packing = copy, complex ranges { section .data };
+
+  Section              Kind        Address   Size  Object
+  -------              ----        -------   ----  ------
+"A0":                                       0x410
+  .intvec              const    0x00010000  0x410  vectors.o [1]
+                              - 0x00010410  0x410
+
+"A1":                                         0x8
+  .noinit              ro code  0x00010410    0x8  startup_MK66FX18.o [1]
+                              - 0x00010418    0x8
+
+"P1", part 1 of 2:                          0x518
+  .text                ro code  0x00010418  0x140  MK66_uart.o [1]
+  .text                ro code  0x00010558   0x3c  MK66_port.o [1]
+  .text                ro code  0x00010594   0xc4  system_MK66FX18.o [1]
+  .text                ro code  0x00010658   0x2c  MK66_wdog.o [1]
+  .text                ro code  0x00010684   0x4c  main.o [1]
+  .text                ro code  0x000106d0   0xa6  ABImemcpy.o [5]
+  .text                ro code  0x00010776    0x2  MK66_conf.o [1]
+  .text                ro code  0x00010778    0xc  misc.o [1]
+  .text                ro code  0x00010784    0x6  ABImemclr.o [5]
+  .text                ro code  0x0001078c   0x4c  MK66_gpio.o [1]
+  .text                ro code  0x000107d8   0x5e  ABImemset.o [5]
+  .text                ro code  0x00010836   0x40  zero_init3.o [5]
+  .data_init                    0x00010878   0x3c  <Block>
+    Initializer bytes  const    0x00010878   0x3c  <for .data-1>
+  .text                ro code  0x000108b4   0x28  data_init.o [5]
+  .iar.init_table      const    0x000108dc   0x10  - Linker created -
+  .text                ro code  0x000108ec   0x1a  cmain.o [5]
+  .text                ro code  0x00010906    0x4  exit.o [3]
+  .text                ro code  0x0001090c    0xa  cexit.o [5]
+  .text                ro code  0x00010918    0xc  XXexit.o [5]
+  .text                ro code  0x00010924    0xc  cstartup_M.o [5]
+  .rodata              const    0x00010930    0x0  zero_init3.o [5]
+                              - 0x00010930  0x518
+
+"P1", part 2 of 2:                            0x0
+  CodeRelocate                  0x00010930    0x0  <Block>
+
+"P2", part 1 of 3:                           0x3c
+  .data                         0x1fff0410   0x3c  <Block>
+    .data-1                     0x1fff0410   0x3c  <Init block>
+      .data            inited   0x1fff0410   0x14  MK66_gpio.o [1]
+      .data            inited   0x1fff0424   0x14  MK66_port.o [1]
+      .data            inited   0x1fff0438   0x14  MK66_uart.o [1]
+                              - 0x1fff044c   0x3c
+
+"P2", part 2 of 3:                            0xc
+  .bss                          0x1fff044c    0xc  <Block>
+    .bss               zero     0x1fff044c    0xc  system_MK66FX18.o [1]
+                              - 0x1fff0458    0xc
+
+"P2", part 3 of 3:                            0x0
+  CodeRelocateRam               0x1fff0458    0x0  <Block>
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0xc:
+          0x1fff044c   0xc
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module              ro code  ro data  rw data
+    ------              -------  -------  -------
+F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj: [1]
+    MK66_conf.o               2
+    MK66_gpio.o              76       20       20
+    MK66_port.o              60       20       20
+    MK66_uart.o             320       20       20
+    MK66_wdog.o              44
+    main.o                   76
+    misc.o                   12
+    startup_MK66FX18.o        8
+    system_MK66FX18.o       196                12
+    vectors.o                      1 040
+    ---------------------------------------------
+    Total:                  794    1 100       72
+
+command line: [2]
+    ---------------------------------------------
+    Total:
+
+dl7M_tlf.a: [3]
+    exit.o                    4
+    ---------------------------------------------
+    Total:                    4
+
+m7M_tl.a: [4]
+    ---------------------------------------------
+    Total:
+
+rt7M_tl.a: [5]
+    ABImemclr.o               6
+    ABImemcpy.o             166
+    ABImemset.o              94
+    XXexit.o                 12
+    cexit.o                  10
+    cmain.o                  26
+    cstartup_M.o             12
+    data_init.o              40
+    zero_init3.o             64
+    ---------------------------------------------
+    Total:                  430
+
+    Gaps                      6
+    Linker created                    16
+-------------------------------------------------
+    Grand Total:          1 234    1 116       72
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.bss$$Base              0x1fff044c          --   Gb  - Linker created -
+.bss$$Limit             0x1fff0458          --   Gb  - Linker created -
+.data$$Base             0x1fff0410          --   Gb  - Linker created -
+.data$$Limit            0x1fff044c          --   Gb  - Linker created -
+.data_init$$Base        0x00010878          --   Gb  - Linker created -
+.data_init$$Limit       0x000108b4          --   Gb  - Linker created -
+.iar.init_table$$Base   0x000108dc          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x000108ec          --   Gb  - Linker created -
+?main                   0x000108ed         Code  Gb  cmain.o [5]
+CodeRelocate$$Base      0x00010930          --   Gb  - Linker created -
+CodeRelocate$$Limit     0x00010930          --   Gb  - Linker created -
+CodeRelocateRam$$Base   0x1fff0458          --   Gb  - Linker created -
+CodeRelocateRam$$Limit  0x1fff0458          --   Gb  - Linker created -
+GPIOX                   0x1fff0410   0x14  Data  Gb  MK66_gpio.o [1]
+PORTX                   0x1fff0424   0x14  Data  Gb  MK66_port.o [1]
+Region$$Table$$Base     0x000108dc          --   Gb  - Linker created -
+Region$$Table$$Limit    0x000108ec          --   Gb  - Linker created -
+Reset_Handler           0x00010411         Code  Gb  startup_MK66FX18.o [1]
+UARTN                   0x1fff0438   0x14  Data  Gb  MK66_uart.o [1]
+__BOOT_STACK_ADDRESS {Abs}
+                        0x2002fff8         Data  Gb  command line/config [2]
+__VECTOR_RAM {Abs}      0x1fff0000         Data  Gb  command line/config [2]
+__VECTOR_TABLE {Abs}    0x00010000         Data  Gb  command line/config [2]
+__aeabi_memclr          0x00010785         Code  Gb  ABImemclr.o [5]
+__aeabi_memcpy          0x000106d1         Code  Gb  ABImemcpy.o [5]
+__aeabi_memcpy4         0x000106f1         Code  Gb  ABImemcpy.o [5]
+__aeabi_memcpy8         0x000106f1         Code  Gb  ABImemcpy.o [5]
+__cmain                 0x000108ed         Code  Gb  cmain.o [5]
+__code_start__ {Abs}    0x00010410         Data  Gb  command line/config [2]
+__exit                  0x00010919         Code  Gb  XXexit.o [5]
+__iar_Memset_word       0x000107d9         Code  Gb  ABImemset.o [5]
+__iar_data_init3        0x000108b5   0x28  Code  Gb  data_init.o [5]
+__iar_program_start     0x00010925         Code  Gb  cstartup_M.o [5]
+__iar_systems$$module {Abs}
+                        0x00000001         Data  Gb  command line/config [2]
+__iar_zero_init3        0x00010837   0x40  Code  Gb  zero_init3.o [5]
+__vector_table          0x00010000  0x410  Data  Gb  vectors.o [1]
+_call_main              0x000108f9         Code  Gb  cmain.o [5]
+_exit                   0x0001090d         Code  Gb  cexit.o [5]
+_main                   0x00010903         Code  Gb  cmain.o [5]
+bus_clk_khz             0x1fff0454    0x4  Data  Gb  system_MK66FX18.o [1]
+common_startup          0x000105e5   0x44  Code  Gb  system_MK66FX18.o [1]
+core_clk_khz            0x1fff044c    0x4  Data  Gb  system_MK66FX18.o [1]
+core_clk_mhz            0x1fff0450    0x4  Data  Gb  system_MK66FX18.o [1]
+default_isr             0x00010777    0x2  Code  Gb  MK66_conf.o [1]
+exit                    0x00010907    0x4  Code  Gb  exit.o [3]
+gpio_init               0x0001078d   0x46  Code  Gb  MK66_gpio.o [1]
+main                    0x00010685   0x4c  Code  Gb  main.o [1]
+port_init               0x00010559   0x2c  Code  Gb  MK66_port.o [1]
+start                   0x00010595   0x14  Code  Gb  system_MK66FX18.o [1]
+sysinit                 0x000105a9   0x3c  Code  Gb  system_MK66FX18.o [1]
+uart_init               0x00010419  0x130  Code  Gb  MK66_uart.o [1]
+wdog_disable            0x00010659   0x26  Code  Gb  MK66_wdog.o [1]
+write_vtor              0x00010779    0x6  Code  Gb  misc.o [1]
+
+
+[1] = F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Obj
+[2] = command line
+[3] = dl7M_tlf.a
+[4] = m7M_tl.a
+[5] = rt7M_tl.a
+
+  1 234 bytes of readonly  code memory
+  1 116 bytes of readonly  data memory
+     72 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

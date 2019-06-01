@@ -1,0 +1,17 @@
+"D:\IAR\arm\bin\armproc.dll" 
+
+"D:\IAR\arm\bin\armjlink2.dll" 
+
+"F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\MK66FX18_Release\Exe\vcan_Kinetis.out" 
+
+--plugin "D:\IAR\arm\bin\armbat.dll" 
+
+--device_macro "D:\IAR\arm\config\debugger\NXP\Kxx.dmac" 
+
+--device_macro "D:\IAR\arm\config\debugger\NXP\Kxx_Trace.dmac" 
+
+--flash_loader "F:\k66\K66代码发布\K66_Jlink_UART3\2.GPIO_51风格输出\Prj\IAR\config files\vcan_K66.board" 
+
+
+
+

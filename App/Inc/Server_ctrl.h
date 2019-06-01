@@ -1,0 +1,33 @@
+#ifndef _SERVER_CTRL_H_
+#define _SERVER_CTRL_H_
+
+#include "common.h"
+#include "include.h"
+
+typedef struct
+{
+    float Set_Speed;            //预定速度
+    float Current_Speed;        //当前速度
+    float Set_Angle;            //预定角度
+    float Current_Angle;        //当前角度  
+    //float Current_AngleS;
+    float Error;                //当前偏差
+    float Last_Error;           //上次偏差
+    float Past_Error;
+    float Kp;                   //比例系数
+    //float Kpout;
+    float Ki;                   //积分系数
+    float Kd;                   //微分系数
+    //float OUT;                  //稳态偏零
+    float OUTPWM;               //输出结果
+    //float speed_out;
+    
+}PID;
+
+extern PID Server;
+
+void PID_Init(void);
+
+
+
+#endif
