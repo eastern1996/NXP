@@ -16,7 +16,7 @@ uint8 StopFlag = 0,StopFlag1 = 0;
 uint8 TimeCount1 = 0,TimeCount2 = 0;
 uint8 mode = 0x00;
 
-uint32 UP_Value[8];
+int32 UP_Value[8];
 
 void PIT0_IRQHandler(void);    //
 void PIT1_IRQHandler(void);    //脉冲计数中断
@@ -45,6 +45,12 @@ void System_Init()
     Key_Init();
     Menu_Init();          //菜单初始化
     PID_Init();
+    Encoder_init();
+    Motor_Init();
+    
+    
+    
+    
     pit_init_ms(PIT0,2);                                     //初始化PIT0，定时时间为： 2ms  方向控制周期  
     set_vector_handler(PIT0_VECTORn ,PIT0_IRQHandler);       //设置PIT0的中断服务函数为 PIT0_IRQHandler    
                                        //使能PIT0中断  
@@ -117,6 +123,8 @@ void PIT0_IRQHandler(void)
 void PIT1_IRQHandler(void)
 {
     TimeCount2++;
+    Get_Speed();
+    Speed_PID_Ctrl();
     if(TimeCount2>=200)
     {
         TimeCount2 = 0;
