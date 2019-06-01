@@ -23,9 +23,9 @@ param([String]$debugfile = "");
 
 if ($debugfile -eq "")
 {
-& "E:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\common\bin\cspybat" -f "D:\智能车项目\软件\逮虾户V1.0\Prj\IAR\settings\vcan_Kinetis.MK66FX18_Debug.general.xcl" --backend -f "D:\智能车项目\软件\逮虾户V1.0\Prj\IAR\settings\vcan_Kinetis.MK66FX18_Debug.driver.xcl" 
+& "E:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\common\bin\cspybat" -f "D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Prj\IAR\settings\vcan_Kinetis.MK66FX18_Debug.general.xcl" --backend -f "D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Prj\IAR\settings\vcan_Kinetis.MK66FX18_Debug.driver.xcl" 
 }
 else
 {
-& "E:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\common\bin\cspybat" -f "D:\智能车项目\软件\逮虾户V1.0\Prj\IAR\settings\vcan_Kinetis.MK66FX18_Debug.general.xcl" --debug_file=$debugfile --backend -f "D:\智能车项目\软件\逮虾户V1.0\Prj\IAR\settings\vcan_Kinetis.MK66FX18_Debug.driver.xcl" 
+& "E:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\common\bin\cspybat" -f "D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Prj\IAR\settings\vcan_Kinetis.MK66FX18_Debug.general.xcl" --debug_file=$debugfile --backend -f "D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Prj\IAR\settings\vcan_Kinetis.MK66FX18_Debug.driver.xcl" 
 }
