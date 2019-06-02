@@ -10,8 +10,8 @@ void PID_Init(void)
     Server.Ki = 2;
     Server.Kd = 3;
     
-    Motor.Kp = 80;
-    Motor.Ki = 0;
+    Motor.Kp = 50;
+    Motor.Ki = 5;
     Motor.Kd = 0;
     Motor.Set_Speed = 200;
 }
