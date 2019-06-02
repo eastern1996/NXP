@@ -47,7 +47,7 @@ void System_Init()
     PID_Init();
     Encoder_init();
     Motor_Init();
-    
+    Server_Init();
     
     
     
@@ -107,6 +107,10 @@ void PIT0_IRQHandler(void)
         //lptmr_time_start_us();
         Read_ADC();
         //UP_Value[0] = lptmr_time_get_us();//125us
+    }
+    if(TimeCount1 %10 ==0)
+    {
+        Server_PID_Ctrl();
     }
     if(TimeCount1>=250)
     {

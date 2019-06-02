@@ -27,6 +27,9 @@ typedef struct
 extern PID Server;
 
 void PID_Init(void);
+void Server_Init();
+void Server_Run(float duty);
+void Server_PID_Ctrl();
 
 
 
