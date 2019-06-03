@@ -1,46 +1,46 @@
-"D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Board\src\vcan_img2sd.c"
+"D:\Smart Car Program\Software\EDD smart car\V1.1\Board\src\vcan_img2sd.c"
 -std=c11
 -ferror-limit=0
 -I
-D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Prj\IAR\..\..\App
+D:\Smart Car Program\Software\EDD smart car\V1.1\Prj\IAR\..\..\App
 -I
-D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Prj\IAR\..\..\App\Inc
+D:\Smart Car Program\Software\EDD smart car\V1.1\Prj\IAR\..\..\App\Inc
 -I
-D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Prj\IAR\..\..\Board\Inc
+D:\Smart Car Program\Software\EDD smart car\V1.1\Prj\IAR\..\..\Board\Inc
 -I
-D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Prj\IAR\..\..\Chip\inc
+D:\Smart Car Program\Software\EDD smart car\V1.1\Prj\IAR\..\..\Chip\inc
 -I
-D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Prj\IAR\..\..\Chip\inc\IAR
+D:\Smart Car Program\Software\EDD smart car\V1.1\Prj\IAR\..\..\Chip\inc\IAR
 -I
-D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Prj\IAR\..\..\Chip\inc\kinetis
+D:\Smart Car Program\Software\EDD smart car\V1.1\Prj\IAR\..\..\Chip\inc\kinetis
 -I
-D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Prj\IAR\..\..\Lib\CMSIS\Inc
+D:\Smart Car Program\Software\EDD smart car\V1.1\Prj\IAR\..\..\Lib\CMSIS\Inc
 -I
-D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Prj\IAR\..\..\Lib\FatFs
+D:\Smart Car Program\Software\EDD smart car\V1.1\Prj\IAR\..\..\Lib\FatFs
 -I
-D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Prj\IAR\..\..\Lib\USB
+D:\Smart Car Program\Software\EDD smart car\V1.1\Prj\IAR\..\..\Lib\USB
 -I
 E:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\inc
 -I
 E:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\inc\c
 -I
-D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\App
+D:\Smart Car Program\Software\EDD smart car\V1.1\App
 -I
-D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\App\Inc
+D:\Smart Car Program\Software\EDD smart car\V1.1\App\Inc
 -I
-D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Board\Inc
+D:\Smart Car Program\Software\EDD smart car\V1.1\Board\Inc
 -I
-D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Chip\inc
+D:\Smart Car Program\Software\EDD smart car\V1.1\Chip\inc
 -I
-D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Chip\inc\IAR
+D:\Smart Car Program\Software\EDD smart car\V1.1\Chip\inc\IAR
 -I
-D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Chip\inc\kinetis
+D:\Smart Car Program\Software\EDD smart car\V1.1\Chip\inc\kinetis
 -I
-D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Lib\CMSIS\Inc
+D:\Smart Car Program\Software\EDD smart car\V1.1\Lib\CMSIS\Inc
 -I
-D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Lib\FatFs
+D:\Smart Car Program\Software\EDD smart car\V1.1\Lib\FatFs
 -I
-D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Lib\USB
+D:\Smart Car Program\Software\EDD smart car\V1.1\Lib\USB
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=127
 -D__CHAR_MIN__=(-__CHAR_MAX__-1)

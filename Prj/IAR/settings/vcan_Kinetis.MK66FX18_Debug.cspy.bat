@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"E:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\common\bin\cspybat" -f "D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Prj\IAR\settings\vcan_Kinetis.MK66FX18_Debug.general.xcl" --backend -f "D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Prj\IAR\settings\vcan_Kinetis.MK66FX18_Debug.driver.xcl" 
+"E:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\common\bin\cspybat" -f "D:\Smart Car Program\Software\EDD smart car\V1.1\Prj\IAR\settings\vcan_Kinetis.MK66FX18_Debug.general.xcl" --backend -f "D:\Smart Car Program\Software\EDD smart car\V1.1\Prj\IAR\settings\vcan_Kinetis.MK66FX18_Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"E:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\common\bin\cspybat" -f "D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Prj\IAR\settings\vcan_Kinetis.MK66FX18_Debug.general.xcl" "--debug_file=%~1" --backend -f "D:\智能车项目\软件\逮虾户V1.1\逮虾户V1.0\Prj\IAR\settings\vcan_Kinetis.MK66FX18_Debug.driver.xcl" 
+"E:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\common\bin\cspybat" -f "D:\Smart Car Program\Software\EDD smart car\V1.1\Prj\IAR\settings\vcan_Kinetis.MK66FX18_Debug.general.xcl" "--debug_file=%~1" --backend -f "D:\Smart Car Program\Software\EDD smart car\V1.1\Prj\IAR\settings\vcan_Kinetis.MK66FX18_Debug.driver.xcl" 
 
 @echo off 
 :end

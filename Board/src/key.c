@@ -14,6 +14,8 @@ void Key_Init(void)                    //按键初始化
 	I2C1_SDA_H
 	DELAY_MS(500);
 	Key_Write(0x48,0x4d);
+//板载拨码开关初始化
+    key_init(KEY_MAX);
 
     port_init(Int_GPIO , ALT1 | IRQ_FALLING | PULLUP );           //中断引脚初始化
     set_vector_handler(Int_VECT ,PORTE_IRQHandler);          //配置中断
@@ -69,38 +71,6 @@ void Key_Handler(void)                      //按键服务函数
     key.key_value = Get_Keynum();
 }
 
-void Board_Key_Init()
-{
-	gpio_init(PTD7,GPI,1);               
-        port_init_NoALT(PTD7,PULLUP);  //KEY-1
-        
-	gpio_init(PTD8,GPI,1);    			          
-        port_init_NoALT(PTD8,PULLUP);  //KEY-2
-        
-	gpio_init(PTD9,GPI,1);               
-        port_init_NoALT(PTD9,PULLUP);  //KEY-3
-        
-	gpio_init(PTD10,GPI,1);               
-        port_init_NoALT(PTD10,PULLUP);  //KEY-4
-    
-
-        
-	gpio_init(PTD1,GPI,1);
-        port_init_NoALT(PTD1,PULLUP);  //拨码开关SK1
-        
-	gpio_init(PTD2,GPI,1);               
-        port_init_NoALT(PTD2,PULLUP);  //拨码开关SK2
-        
-	gpio_init(PTD3,GPI,1);    			          
-        port_init_NoALT(PTD3,PULLUP);  //拨码开关SK3
-        
-	gpio_init(PTD4,GPI,1);               
-        port_init_NoALT(PTD4,PULLUP);  //拨码开关SK4
-        
-	gpio_init(PTD7,GPI,1);               
-        port_init_NoALT(PTD7,PULLUP);   //核心板按键
-	
-}
 void KEY_Mode()
 {
   if(gpio_get(PTD1))

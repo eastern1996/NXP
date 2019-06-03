@@ -912,7 +912,7 @@
                 <expressions>
                     <item>L_AD</item>
                     <item>R_AD</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>

@@ -7,8 +7,8 @@
  */
 #include "Server_ctrl.h"
 #include "Motor_ctrl.h"
-#define SERVER_MIDDLE 7.25
-#define SERVER_LIMIT 4.75
+#define SERVER_MIDDLE 7.5
+#define SERVER_LIMIT 1.15
 
 PID Server;
 
@@ -21,7 +21,7 @@ void PID_Init(void)
     Motor.Kp = 50;
     Motor.Ki = 5;
     Motor.Kd = 0;
-    Motor.Set_Speed = 200;
+    Motor.Set_Speed = 100;
 }
 
 void Server_Init()
@@ -32,24 +32,14 @@ void Server_Init()
 void Server_Run(float duty)
 {
 #ifdef SERVER_DEBUG
-    static uint8 flag = 0;
-    static float text_duty = 0;
+    float text_duty = 0;
+    if(key_get(KEY_1) == KEY_DOWN)
+    {
+        if(key_get(KEY_2) == KEY_DOWN)text_duty = SERVER_MIDDLE;
+        else text_duty = SERVER_MIDDLE+SERVER_LIMIT;
+    }
+    else text_duty = SERVER_MIDDLE-SERVER_LIMIT;
 
-    if(flag)text_duty -= 0.1;
-    else text_duty += 0.1;
-    if(text_duty > SERVER_MIDDLE+SERVER_LIMIT)
-    {
-        text_duty = SERVER_MIDDLE+SERVER_LIMIT;
-        flag = 1;
-    }
-    if(text_duty < SERVER_MIDDLE-SERVER_LIMIT)
-    {
-        text_duty = SERVER_MIDDLE-SERVER_LIMIT;
-        flag = 0;
-    }
-#ifdef SERVER_GO_TO_MIDDLE
-    text_duty = SERVER_MIDDLE;
-#endif
     ftm_pwm_duty(FTM2, FTM_CH0,text_duty);
 #endif
 #ifndef SERVER_DEBUG
