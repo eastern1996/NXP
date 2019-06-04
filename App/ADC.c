@@ -157,12 +157,13 @@ void Get_Smoothed_ADC()
 void Read_ADC()
 {
     Get_Smoothed_ADC();
-    L_AD  = Get_Value_Sum(&Value[0]);
-    R_AD  = Get_Value_Sum(&Value[1]);
-    LS_AD = Get_Value_Sum(&Value[2]);
-    RS_AD = Get_Value_Sum(&Value[3]);
-    LM_AD = Get_Value_Sum(&Value[4]);
-    RM_AD = Get_Value_Sum(&Value[5]);
+    L_AD  = Get_Value_Sum(&Value[0])-3;
+    R_AD  = Get_Value_Sum(&Value[7])-15;
+    LS_AD = Get_Value_Sum(&Value[1])-8;
+    RS_AD = Get_Value_Sum(&Value[6])-16;
+    LM_AD = Get_Value_Sum(&Value[2])-36;
+    RM_AD = Get_Value_Sum(&Value[5])-9;
+    M_AD =  Get_Value_Sum(&Value[3])-76;
     #if 0
     L_AD = 200,
     R_AD = 0,
@@ -176,6 +177,7 @@ void Read_ADC()
     UP_Value[3] = RS_AD;
     UP_Value[4] = LM_AD;
     UP_Value[5] = RM_AD;
+    UP_Value[6] = M_AD;
     //vcan_sendware(UP_Value, sizeof(UP_Value));
     #endif
     
