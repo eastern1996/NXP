@@ -20,6 +20,7 @@ void Motor_Init()
 
 void Motor_Run(float *duty)
 {
+    if(StopFlag1)*duty = 0;
     if(*duty>MOTOR_OUTPWM_MAX)*duty = MOTOR_OUTPWM_MAX;
     if(*duty<-MOTOR_OUTPWM_MAX)*duty = -MOTOR_OUTPWM_MAX;//Êä³öÏÞ·ù
     if(*duty > 0)

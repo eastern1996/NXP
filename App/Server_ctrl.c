@@ -7,8 +7,8 @@
  */
 #include "Server_ctrl.h"
 #include "Motor_ctrl.h"
-#define SERVER_MIDDLE 7.5
-#define SERVER_LIMIT 1.15
+#define SERVER_MIDDLE 7.65
+#define SERVER_LIMIT 1.2
 
 PID Server;
 
@@ -36,9 +36,9 @@ void Server_Run(float duty)
     if(key_get(KEY_1) == KEY_DOWN)
     {
         if(key_get(KEY_2) == KEY_DOWN)text_duty = SERVER_MIDDLE;
-        else text_duty = SERVER_MIDDLE+SERVER_LIMIT;
+        else text_duty = SERVER_MIDDLE+SERVER_LIMIT;//ÓÒ
     }
-    else text_duty = SERVER_MIDDLE-SERVER_LIMIT;
+    else text_duty = SERVER_MIDDLE-SERVER_LIMIT;//×ó
 
     ftm_pwm_duty(FTM2, FTM_CH0,text_duty);
 #endif
@@ -51,11 +51,23 @@ void Server_Run(float duty)
 
 void Server_PID_Ctrl()
 {
-    float derror = 0;
-    Server_Run(derror);
-    
+    int error = Get_Direction_Error();
+    int derror = error - (int)Server.Last_Error;
+    Server.OUTPWM = 0.01*(Server.Kp*error + Server.Kd*derror);
+#ifdef SERVER_PID_UP_DATA
+    UP_Value[0] = (int32)error;
+    UP_Value[1] = (int32)Server.Last_Error;
+    UP_Value[2] = (int32)Server.OUTPWM;
+#endif 
+    Server.Last_Error = error;
+    Server_Run(Server.OUTPWM);
 }
 int32 Get_Direction_Error()
 {
-    
+    int error,xerror,serror,error_sum;
+    error  = (L_AD-R_AD)/(L_AD+R_AD);
+    xerror = (LM_AD-RM_AD)/(LM_AD+RM_AD);
+    serror = (LS_AD-RS_AD)/(LS_AD+RS_AD);
+    error_sum = error + xerror + serror;
+    return error_sum;
 }

@@ -20,7 +20,7 @@ int32 UP_Value[8];
 
 void PIT0_IRQHandler(void);    //
 void PIT1_IRQHandler(void);    //脉冲计数中断
-void PORTC_IRQHandler(void);   //PORTC端口中断服务函数
+//void PORTC_IRQHandler(void);   //PORTC端口中断服务函数
 void PORTD_IRQHandler(void);   //PORTC端口中断服务函数
 void key_Stop(void);           //按键停车
 
@@ -59,20 +59,20 @@ void System_Init()
     set_vector_handler(PIT1_VECTORn ,PIT1_IRQHandler);      //设置PIT1的中断服务函数为 PIT1_IRQHandler    
                                       //使能PIT1中断  
         
-//    port_init(PTC4, ALT1 | IRQ_RISING | PULLDOWN );          //初始化 PTC4 外部中断管脚  遥控停车
-//    set_vector_handler(PORTC_VECTORn ,PORTC_IRQHandler);    //设置PORTC的中断服务函数为 PORTC_IRQHandler    
-//                                   //使能PORTC中断    
+    port_init(PTD4, ALT1 | IRQ_RISING | PULLDOWN );          //初始化 PTD4 外部中断管脚  遥控停车
+    set_vector_handler(PORTD_VECTORn ,PORTD_IRQHandler);    //设置PORTD的中断服务函数为 PORTD_IRQHandler    
+                                   //使能PORTD中断    
     
     NVIC_SetPriorityGrouping(4);		    //设定中断优先级分组
 	set_irq_priority(UART4_RX_TX_IRQn,3);   //串口中断优先级
 	set_irq_priority(PORTA_IRQn,1);   	    //按键板中断优先级
-        set_irq_priority(PIT0_IRQn ,2);		    //定时器中断优先级
-        set_irq_priority(PIT1_IRQn ,0);		    //定时器中断优先级
-  	set_irq_priority(PORTC_IRQn ,1);        //按键停车中断优先级
+    set_irq_priority(PIT0_IRQn ,2);		    //定时器中断优先级
+    set_irq_priority(PIT1_IRQn ,0);		    //定时器中断优先级
+  	set_irq_priority(PORTD_IRQn ,1);        //按键停车中断优先级
     
     enable_irq(PIT0_IRQn);
     enable_irq(PIT1_IRQn);
-    //enable_irq (PORTC_IRQn); 
+    enable_irq (PORTD_IRQn); 
     
     
 }
@@ -147,10 +147,6 @@ void PORTC_IRQHandler(void)
     {
         PORTC_ISFR  = (1 << 4);        //写1清中断标志位
         //用户任务
-        if(StopFlag1==0)
-            StopFlag1 = 1;//触发遥控中断
-        else
-            StopFlag1 = 0;
         //结束
     }
 }
@@ -161,11 +157,10 @@ void PORTC_IRQHandler(void)
  */
 void PORTD_IRQHandler(void)
 {
-    if(PORTD_ISFR & (1 << 7))           //PTD7 触发中断
+    if(PORTD_ISFR & (1 << 4))           //PTD4 触发中断
     {
-        PORTD_ISFR  = (1 << 7);        //写1清中断标志位
-        //用户任务
-        
-        //结束
+        PORTD_ISFR  = (1 << 4);        //写1清中断标志位
+        StopFlag1 = ~StopFlag1;
+        led_turn(LED2);
     }
 }

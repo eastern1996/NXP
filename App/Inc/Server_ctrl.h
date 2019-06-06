@@ -30,6 +30,7 @@ void PID_Init(void);
 void Server_Init();
 void Server_Run(float duty);
 void Server_PID_Ctrl();
+int32 Get_Direction_Error();
 
 
 
