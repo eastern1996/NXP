@@ -2095,6 +2095,9 @@
     <group>
         <name>Board</name>
         <file>
+            <name>$PROJ_DIR$\..\..\Board\src\Beep.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\..\Board\src\IIC.c</name>
         </file>
         <file>

@@ -158,12 +158,12 @@ void Read_ADC()
 {
     Get_Smoothed_ADC();
     L_AD  = Get_Value_Sum(&Value[0])-3;
-    R_AD  = Get_Value_Sum(&Value[7])-15;
+    R_AD  = Get_Value_Sum(&Value[7])-10;
     LS_AD = Get_Value_Sum(&Value[1])-8;
-    RS_AD = Get_Value_Sum(&Value[6])-16;
-    LM_AD = Get_Value_Sum(&Value[2])-36;
+    RS_AD = Get_Value_Sum(&Value[6])-10;
+    LM_AD = Get_Value_Sum(&Value[2])-31;
     RM_AD = Get_Value_Sum(&Value[5])-9;
-    M_AD =  Get_Value_Sum(&Value[3])-76;
+    M_AD =  Get_Value_Sum(&Value[3])-75;
     #if 0
     L_AD = 200,
     R_AD = 0,

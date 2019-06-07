@@ -44,6 +44,7 @@
 #include "key.h"
 #include "OLED.h"
 #include "menu.h"
+#include "Beep.h"
 
 
 #endif  //__INCLUDE_H__

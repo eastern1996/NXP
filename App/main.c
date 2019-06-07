@@ -48,7 +48,7 @@ void System_Init()
     Encoder_init();
     Motor_Init();
     Server_Init();
-    
+    Beep_Init();
     
     
     pit_init_ms(PIT0,2);                                     //初始化PIT0，定时时间为： 2ms  方向控制周期  
@@ -68,13 +68,14 @@ void System_Init()
 	set_irq_priority(PORTA_IRQn,1);   	    //按键板中断优先级
     set_irq_priority(PIT0_IRQn ,2);		    //定时器中断优先级
     set_irq_priority(PIT1_IRQn ,0);		    //定时器中断优先级
+    set_irq_priority(PIT3_IRQn ,1);		    //定时器中断优先级
   	set_irq_priority(PORTD_IRQn ,1);        //按键停车中断优先级
     
     enable_irq(PIT0_IRQn);
     enable_irq(PIT1_IRQn);
     enable_irq (PORTD_IRQn); 
     
-    
+    Beep_Once(500);
 }
 
 /*!
@@ -162,5 +163,6 @@ void PORTD_IRQHandler(void)
         PORTD_ISFR  = (1 << 4);        //写1清中断标志位
         StopFlag1 = ~StopFlag1;
         led_turn(LED2);
+        Beep_Once(500);
     }
 }

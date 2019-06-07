@@ -8,15 +8,15 @@
 #include "Server_ctrl.h"
 #include "Motor_ctrl.h"
 #define SERVER_MIDDLE 7.65
-#define SERVER_LIMIT 1.2
+#define SERVER_LIMIT 1.3
 
 PID Server;
 
 void PID_Init(void)
 {
-    Server.Kp = 1;
+    Server.Kp = 500;
     Server.Ki = 2;
-    Server.Kd = 3;
+    Server.Kd = 0;
     
     Motor.Kp = 50;
     Motor.Ki = 5;
@@ -51,9 +51,9 @@ void Server_Run(float duty)
 
 void Server_PID_Ctrl()
 {
-    int error = Get_Direction_Error();
-    int derror = error - (int)Server.Last_Error;
-    Server.OUTPWM = 0.01*(Server.Kp*error + Server.Kd*derror);
+    float error = Get_Direction_Error();
+    float derror = error - Server.Last_Error;
+    Server.OUTPWM = SERVER_MIDDLE - 0.01*(Server.Kp*error + Server.Kd*derror);
 #ifdef SERVER_PID_UP_DATA
     UP_Value[0] = (int32)error;
     UP_Value[1] = (int32)Server.Last_Error;
@@ -62,12 +62,12 @@ void Server_PID_Ctrl()
     Server.Last_Error = error;
     Server_Run(Server.OUTPWM);
 }
-int32 Get_Direction_Error()
+float Get_Direction_Error()
 {
-    int error,xerror,serror,error_sum;
-    error  = (L_AD-R_AD)/(L_AD+R_AD);
-    xerror = (LM_AD-RM_AD)/(LM_AD+RM_AD);
-    serror = (LS_AD-RS_AD)/(LS_AD+RS_AD);
-    error_sum = error + xerror + serror;
+    float error,xerror,serror,error_sum;
+    error  = (float)(L_AD-R_AD)/(L_AD+R_AD);
+    xerror = (float)(LM_AD-RM_AD)/(LM_AD+RM_AD);
+    serror = (float)(LS_AD-RS_AD)/(LS_AD+RS_AD);
+    error_sum = error;// + xerror + serror;
     return error_sum;
 }
