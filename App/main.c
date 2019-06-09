@@ -74,8 +74,7 @@ void System_Init()
     enable_irq(PIT0_IRQn);
     enable_irq(PIT1_IRQn);
     enable_irq (PORTD_IRQn); 
-    
-    Beep_Once(500);
+    beep_on = 1;
 }
 
 /*!
@@ -92,7 +91,8 @@ void main()
         vcan_sendware(UP_Value, sizeof(UP_Value));
         //printf("\n\n串口时间为：%dus",lptmr_time_get_us());
         Change_Level();
-        DELAY_MS(10);
+        //DELAY_MS(10);
+        Beep(50);
     }
 }
 /*!
@@ -163,6 +163,6 @@ void PORTD_IRQHandler(void)
         PORTD_ISFR  = (1 << 4);        //写1清中断标志位
         StopFlag1 = ~StopFlag1;
         led_turn(LED2);
-        Beep_Once(500);
+        beep_on = 2;
     }
 }

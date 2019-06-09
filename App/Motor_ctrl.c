@@ -20,9 +20,9 @@ void Motor_Init()
 
 void Motor_Run(float *duty)
 {
-    if(StopFlag1)*duty = 0;
-    if(*duty>MOTOR_OUTPWM_MAX)*duty = MOTOR_OUTPWM_MAX;
-    if(*duty<-MOTOR_OUTPWM_MAX)*duty = -MOTOR_OUTPWM_MAX;//输出限幅
+    if(StopFlag1||StopFlag)(*duty) = 0;
+    if(*duty>MOTOR_OUTPWM_MAX)(*duty) = MOTOR_OUTPWM_MAX;
+    if(*duty<-MOTOR_OUTPWM_MAX)(*duty) = -MOTOR_OUTPWM_MAX;//输出限幅
     if(*duty > 0)
     {
         ftm_pwm_duty(FTM0,FTM_CH3,*duty);
@@ -64,4 +64,5 @@ void Speed_PID_Ctrl()
 #endif
     Motor.Last_Error = this_error;
     Motor_Run(&Motor.OUTPWM);
+    
 }

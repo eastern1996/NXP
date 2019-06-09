@@ -11,7 +11,7 @@
             <DataFile Name="" />
             <RawFile Name="" />
             <Scope>
-                <Options TimeResolutionUs="500000" />
+                <Options TimeResolutionUs="2000000" />
             </Scope>
         </Configuration>
         <Windows>
@@ -20,7 +20,10 @@
         </Windows>
         <SelectedSymbols>
             <Symbol>
-                <Options Name="OUTPWM" Address="0x1FFF05D4" Type="float" TypeID="1" Size="4" GraphColorRed="255" GraphColorGreen="215" GraphColorBlue="0" YMinSampled="-3" YMaxSampled="-2147483648" YAvgSampled="-2147483648" Offset="4" ShowInGraph="1" ACCoupling="0" YOffset="200" IsAutoConfig="1" YResolution="2000000000" MaxValue="-2147483648" File="D:\Smart Car Program\Software\EDD smart car\V1.1\App\Server_ctrl.c" Scope="0" DrawStyle="0" />
+                <Options Name="L_AD" Address="0x1FFF05EC" Type="short" TypeID="11" Size="2" GraphColorRed="255" GraphColorGreen="215" GraphColorBlue="0" YMinSampled="-22112" YMaxSampled="16384" YAvgSampled="4" Offset="4" ShowInGraph="1" ACCoupling="0" YOffset="200" IsAutoConfig="0" YResolution="100" MaxValue="10" File="D:\Smart Car Program\Software\EDD smart car\V1.1\App\ADC.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="R_AD" Address="0x1FFF05EE" Type="short" TypeID="11" Size="2" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="-1920" YMaxSampled="16390" YAvgSampled="608" Offset="6" ShowInGraph="1" ACCoupling="0" YOffset="200" IsAutoConfig="0" YResolution="200" MaxValue="1000" File="D:\Smart Car Program\Software\EDD smart car\V1.1\App\ADC.c" Scope="0" DrawStyle="0" />
             </Symbol>
         </SelectedSymbols>
     </Project>

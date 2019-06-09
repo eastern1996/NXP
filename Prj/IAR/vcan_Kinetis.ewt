@@ -2319,6 +2319,9 @@
             <name>$PROJ_DIR$\..\..\App\ADC.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\..\App\Inc\define.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\..\App\enter.h</name>
         </file>
         <file>
