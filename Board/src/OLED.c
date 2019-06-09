@@ -398,8 +398,8 @@ void OLED_Init(void)
 	OLED_WrCmd(0x14); //bit2，开启/关闭
 	OLED_WrCmd(0x20); //设置内存地址模式
 	OLED_WrCmd(0x02); //[1:0],00，列地址模式;01，行地址模式;10,页地址模式;默认10;
-	OLED_WrCmd(0xA1); //段重定义设置,bit0:0,0->0;1,0->127;
-	OLED_WrCmd(0xC8); //设置COM扫描方向;bit3:0,普通模式;1,重定义模式 COM[N-1]->COM0;N:驱动路数
+	OLED_WrCmd(0xA0); //段重定义设置,bit0:0,0->0;1,0->127;
+	OLED_WrCmd(0xC0); //设置COM扫描方向;bit3:0,普通模式;1,重定义模式 COM[N-1]->COM0;N:驱动路数
 	OLED_WrCmd(0xDA); //设置COM硬件引脚配置
 	OLED_WrCmd(0x12); //[5:4]配置
 	OLED_WrCmd(0x81); //对比度设置

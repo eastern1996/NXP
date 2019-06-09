@@ -10,18 +10,27 @@
 #define SERVER_MIDDLE 7575
 #define SERVER_LIMIT 1700
 
+enum Run_Status//运行状态枚举
+{
+    Normal,//正常
+    Lost_track,//丢线
+    Annulus,//圆环
+    roadblock,
+    Stop//停车
+}Run_status;
+
 PID Server;
 
 void PID_Init(void)
 {
-    Server.Kp = 20;
-    Server.Ki = 2;
-    Server.Kd = 0;
+    Server.Kp = 18;
+    Server.Ki = 0;
+    Server.Kd = 10;
     
     Motor.Kp = 50;
     Motor.Ki = 5;
     Motor.Kd = 0;
-    Motor.Set_Speed = 30;
+    Motor.Set_Speed = 100;
 }
 
 void Server_Init()
@@ -51,23 +60,41 @@ void Server_Run(float duty)
 
 void Server_PID_Ctrl()
 {
-    float error = Get_Direction_Error();
-    float derror = error - Server.Last_Error;
-    Server.OUTPWM = SERVER_MIDDLE - (Server.Kp*error + Server.Kd*derror);
+    float derror;
+    Get_Direction_Error();
+    derror = Server.Error - Server.Last_Error;
+    Server.OUTPWM = SERVER_MIDDLE - (Server.Kp*Server.Error + Server.Kd*derror);
 #ifdef SERVER_PID_UP_DATA
     UP_Value[0] = (int32)error;
     UP_Value[1] = (int32)Server.Last_Error;
     UP_Value[2] = (int32)Server.OUTPWM;
 #endif 
-    Server.Last_Error = error;
+    Server.Last_Error = Server.Error;
     Server_Run(Server.OUTPWM);
 }
-float Get_Direction_Error()
+enum Run_Status Get_Status()
 {
-    float error,xerror,serror,error_sum;
-    error  = 100.0*(L_AD-R_AD)/(L_AD+R_AD);
-    xerror = 100.0*(LM_AD-RM_AD)/(LM_AD+RM_AD);
-    serror = 100.0*(LS_AD-RS_AD)/(LS_AD+RS_AD);
-    error_sum = 0.7*error + 0.3*xerror;//+ serror;
-    return error_sum;
+    if((L_AD<=5)&&(R_AD<=5))return Lost_track;
+    if(M_AD>900)return Annulus;
+    return Normal;
 }
+void Get_Direction_Error()
+{
+    static uint8 lock_status_flag = 0;
+    if(!lock_status_flag)Run_status = Get_Status();
+    switch(Run_status)
+    {
+        case Normal:Normal_Run();lock_status_flag = 0;break;
+        default:Normal_Run();
+    }   
+}
+
+void Normal_Run()
+{
+    float error,xerror,serror;
+    error  = 100.0*(L_AD-R_AD)/(float)(L_AD+R_AD);
+    xerror = 100.0*(LM_AD-RM_AD)/(float)(LM_AD+RM_AD);
+    serror = 100.0*(LS_AD-RS_AD)/(float)(LS_AD+RS_AD);
+    Server.Error = 0.7*error + 0.3*xerror;//+ serror;
+}
+

@@ -32,7 +32,7 @@ void Key_Write(uint8 addr,uint8 dat)    //对ch455写指令
 
 uint8 Get_Keynum(void)                  //读取键值
 {
-    const uint8 table[12] = {109, 110, 111, 101, 102, 103, 93, 94, 95, 85, 86, 87};     //按键值转化表
+    const uint8 table[12] = {87, 86, 85, 95, 94, 93, 103, 102, 101, 111, 110, 109};     //按键值转化表
 	uint8 count = 0;
 
 	key.key_value = Key_Read(0x4f);
