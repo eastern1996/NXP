@@ -7,7 +7,7 @@
  */
 #include "Server_ctrl.h"
 #include "Motor_ctrl.h"
-#define SERVER_MIDDLE 7575
+#define SERVER_MIDDLE 7725
 #define SERVER_LIMIT 1700
 
 enum Run_Status//ÔËÐÐ×´Ì¬Ã¶¾Ù
@@ -25,7 +25,7 @@ void PID_Init(void)
 {
     Server.Kp = 18;
     Server.Ki = 0;
-    Server.Kd = 10;
+    Server.Kd = 20;
     
     Motor.Kp = 50;
     Motor.Ki = 5;

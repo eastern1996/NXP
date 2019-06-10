@@ -14,7 +14,7 @@ extern int32 UP_Value[8];
 //#define ADC_DEBUG
 //#define MOTOR_DEBUG
 //#define SERVER_DEBUG
-#define ADC_UP_DATA
+//#define ADC_UP_DATA
 //#define SERVER_PID_UP_DATA
 //#define MOTOR_PID_UP_DATA
 
