@@ -20,7 +20,6 @@ int32 UP_Value[8];
 
 void PIT0_IRQHandler(void);    //
 void PIT1_IRQHandler(void);    //脉冲计数中断
-//void PORTC_IRQHandler(void);   //PORTC端口中断服务函数
 void PORTD_IRQHandler(void);   //PORTC端口中断服务函数
 void key_Stop(void);           //按键停车
 
@@ -49,7 +48,7 @@ void System_Init()
     Motor_Init();
     Server_Init();
     Beep_Init();
-    
+    Superware_Init();
     
     pit_init_ms(PIT0,2);                                     //初始化PIT0，定时时间为： 2ms  方向控制周期  
     set_vector_handler(PIT0_VECTORn ,PIT0_IRQHandler);       //设置PIT0的中断服务函数为 PIT0_IRQHandler    
@@ -68,7 +67,6 @@ void System_Init()
 	set_irq_priority(PORTA_IRQn,1);   	    //按键板中断优先级
     set_irq_priority(PIT0_IRQn ,2);		    //定时器中断优先级
     set_irq_priority(PIT1_IRQn ,0);		    //定时器中断优先级
-    set_irq_priority(PIT3_IRQn ,1);		    //定时器中断优先级
   	set_irq_priority(PORTD_IRQn ,1);        //按键停车中断优先级
     
     enable_irq(PIT0_IRQn);
@@ -93,6 +91,7 @@ void main()
         Change_Level();
         //DELAY_MS(10);
         Beep(50);
+        Superware_Get_Distance();
     }
 }
 /*!
@@ -130,26 +129,13 @@ void PIT1_IRQHandler(void)
     TimeCount2++;
     Get_Speed();
     Speed_PID_Ctrl();
+    //Superware_Get_Distance();
     if(TimeCount2>=200)
     {
         TimeCount2 = 0;
         led_turn(LED1);
     }
     PIT_Flag_Clear(PIT1); 	     //清除标志位
-}
-/*!
- *  @brief      PORTC端口中断服务函数
- *  @since      v1.0
- *  @note       老司机一键停车
- */
-void PORTC_IRQHandler(void)
-{
-    if(PORTC_ISFR & (1 << 4))           //PTC4 触发中断
-    {
-        PORTC_ISFR  = (1 << 4);        //写1清中断标志位
-        //用户任务
-        //结束
-    }
 }
 /*!
  *  @brief      PORTD端口中断服务函数

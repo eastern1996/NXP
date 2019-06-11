@@ -45,6 +45,7 @@
 #include "OLED.h"
 #include "menu.h"
 #include "Beep.h"
+#include "Superware.h"
 
 
 #endif  //__INCLUDE_H__

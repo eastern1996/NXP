@@ -5,4 +5,10 @@
 #include "include.h"
 extern uint16 distance;
 
+void PORTC_IRQHandler(void);
+void Superware_Init();
+void Superware_Get_Distance();
+
+
+
 #endif
