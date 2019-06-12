@@ -13,7 +13,7 @@
 #define ERROR 0
 #define OVERFLOW -1
 
-float weight[MAXQSIZE-1] = {0.2 ,0.3 ,0.4 ,0.5 ,0.6};//权重表
+float weight[MAXQSIZE-1] = { 0.1 ,0.3 ,0.4 ,0.5 ,0.7};//权重表
 
 int16 L_AD = 0,
        R_AD = 0,
@@ -148,6 +148,12 @@ void Get_Smoothed_ADC()
     Add_Value(Get_Ntimes_average(ADC6,ADC_10bit,3),&Value[5]);
     Add_Value(Get_Ntimes_average(ADC7,ADC_10bit,3),&Value[6]);
     Add_Value(Get_Ntimes_average(ADC8,ADC_10bit,3),&Value[7]);
+}
+
+int16* ADC_Uniformization()//归一化（暂时没用）
+{
+    //static int16 MAX_value[8];
+    return 0;
 }
 /*!
  *  @brief      得到全部电感值

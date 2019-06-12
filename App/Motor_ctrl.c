@@ -3,6 +3,9 @@
 
 PID Motor;
 
+uint32 viameter = 0;//路程计数器
+uint8 viameter_on_flag = 0;//路程计数器开启标志位
+
 #define MOTOR_OUTPWM_MAX 70
 /*!
  *  @brief      电机初始化
@@ -44,6 +47,8 @@ void Get_Speed()
 {
     Motor.Current_Speed = ftm_quad_get(FTM1);          //获取FTM 正交解码 的脉冲数(负数表示反方向)
     ftm_quad_clean(FTM1);
+    if(viameter_on_flag)viameter += Motor.Current_Speed;
+    else viameter = 0;
 }
 
 void Speed_PID_Ctrl()

@@ -91,7 +91,7 @@ void main()
         Change_Level();
         //DELAY_MS(10);
         Beep(50);
-        Superware_Get_Distance();
+        //Superware_Get_Distance();
     }
 }
 /*!

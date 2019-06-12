@@ -605,8 +605,10 @@ void Set_Pid(void)
 void Show_Distance(void)
 {
   char buf1[22] = {"\0"};
-  sprintf(buf1, "Dis:%f mm", distance);
-  OLED_P6x8Str(0, 0, buf1);
-  
- 
+  while(key.key_value != BACK)
+  {
+    sprintf(buf1, "Dis:%f mm", distance/10.0);
+    OLED_P6x8Str(0, 0, buf1);
+    Superware_Get_Distance();
+  }
 }

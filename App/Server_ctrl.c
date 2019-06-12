@@ -3,19 +3,22 @@
  * @brief      猎户座舵机PID控制
  * @author     MAZY
  * @version    v1.0
- * @date       2019-06-02
+ * @date       2019-06-12
  */
 #include "Server_ctrl.h"
 #include "Motor_ctrl.h"
 #define SERVER_MIDDLE 7725
 #define SERVER_LIMIT 1700
 
+uint8 lock_status_flag = 0;//运行状态锁定位
+   
+   
 enum Run_Status//运行状态枚举
 {
     Normal,//正常
     Lost_track,//丢线
     Annulus,//圆环
-    roadblock,
+    roadblock,//路障
     Stop//停车
 }Run_status;
 
@@ -75,16 +78,16 @@ void Server_PID_Ctrl()
 enum Run_Status Get_Status()
 {
     if((L_AD<=5)&&(R_AD<=5))return Lost_track;
-    if(M_AD>900)return Annulus;
+    if(M_AD>800)return Annulus;
     return Normal;
 }
 void Get_Direction_Error()
 {
-    static uint8 lock_status_flag = 0;
-    if(!lock_status_flag)Run_status = Get_Status();
+    if(!lock_status_flag)Run_status = Get_Status();//若没锁定，则更新状态
     switch(Run_status)
     {
-        case Normal:Normal_Run();lock_status_flag = 0;break;
+        case Normal:Normal_Run();break;
+        case Annulus:Run_In_Annulus();break;
         default:Normal_Run();
     }   
 }
@@ -92,9 +95,40 @@ void Get_Direction_Error()
 void Normal_Run()
 {
     float error,xerror,serror;
-    error  = 100.0*(L_AD-R_AD)/(float)(L_AD+R_AD);
-    xerror = 100.0*(LM_AD-RM_AD)/(float)(LM_AD+RM_AD);
-    serror = 100.0*(LS_AD-RS_AD)/(float)(LS_AD+RS_AD);
+    lock_status_flag = 0;
+    error  = 100.0*(L_AD-R_AD)/(float)(L_AD+R_AD+M_AD);
+    xerror = 100.0*(LM_AD-RM_AD)/(float)(LM_AD+RM_AD+M_AD);
+    serror = 100.0*(LS_AD-RS_AD)/(float)(LS_AD+RS_AD+M_AD);
     Server.Error = 0.7*error + 0.3*xerror;//+ serror;
 }
 
+void Run_In_Annulus()
+{
+    static uint8 annulus_direction;//环方向
+    if(!lock_status_flag)//第一次进入，
+    {
+        lock_status_flag = 1;//锁定圆环状态
+        viameter_on_flag = 1;//开启路程计数器
+        beep_on = 3;//提示音
+        if(LM_AD > RM_AD)//判断环方向
+        {
+            //
+            annulus_direction = 1;//左
+        }
+        else
+        {
+            //
+            annulus_direction = 0;//右
+        }
+    }
+    if(viameter < 9000)//路程不到，固定偏差走
+    {
+        if(annulus_direction)Server.Error = 100.0*(L_AD-R_AD)/(float)(L_AD+R_AD) - 0.5*(LM_AD+RM_AD);
+        else                 Server.Error = 100.0*(L_AD-R_AD)/(float)(L_AD+R_AD) + 0.5*(LM_AD+RM_AD);
+    }
+    else//路程到
+    {
+        lock_status_flag = 0;//解除圆环状态
+        viameter_on_flag = 0;//关闭路程计数器
+    }
+}
