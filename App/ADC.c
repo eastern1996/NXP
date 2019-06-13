@@ -5,6 +5,12 @@
  * @version    v1.0
  * @date       2019-04-03
  */
+
+
+/*Magic Don't touch !*/
+/*Ä§·¨£¬Îð¶¯*/
+
+
 #include "include.h"
 #include "ADC.h"
 

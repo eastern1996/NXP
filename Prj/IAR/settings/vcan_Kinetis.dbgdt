@@ -918,7 +918,7 @@
                     <item>RM_AD</item>
                     <item>M_AD</item>
                     <item>distance</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>

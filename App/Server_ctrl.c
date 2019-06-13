@@ -4,7 +4,18 @@
  * @author     MAZY
  * @version    v1.0
  * @date       2019-06-12
+*/
+
+/*
+ * When I wrote this, only God and I understood what I was doing
+ * Now, God only knows
  */
+/*
+* 写这段代码的时候，只有上帝和我知道它是干嘛的
+* 现在，只有上帝知道
+*/
+
+
 #include "Server_ctrl.h"
 #include "Motor_ctrl.h"
 #define SERVER_MIDDLE 7725
@@ -112,12 +123,10 @@ void Run_In_Annulus()
         beep_on = 3;//提示音
         if(LM_AD > RM_AD)//判断环方向
         {
-            //
             annulus_direction = 1;//左
         }
         else
         {
-            //
             annulus_direction = 0;//右
         }
     }
