@@ -3,12 +3,12 @@
 
 PID Motor;
 
-uint32 viameter = 0;//Â·³Ì¼ÆÊıÆ÷
-uint8 viameter_on_flag = 0;//Â·³Ì¼ÆÊıÆ÷¿ªÆô±êÖ¾Î»
+uint32 viameter = 0;//è·¯ç¨‹è®¡æ•°å™¨
+uint8 viameter_on_flag = 0;//è·¯ç¨‹è®¡æ•°å™¨å¼€å¯æ ‡å¿—ä½
 
 #define MOTOR_OUTPWM_MAX 70
 /*!
- *  @brief      µç»ú³õÊ¼»¯
+ *  @brief      ç”µæœºåˆå§‹åŒ–
  *  @param      
  *  @param      
  *  @since      
@@ -25,7 +25,7 @@ void Motor_Run(float *duty)
 {
     if(StopFlag1||StopFlag)(*duty) = 0;
     if(*duty>MOTOR_OUTPWM_MAX)(*duty) = MOTOR_OUTPWM_MAX;
-    if(*duty<-MOTOR_OUTPWM_MAX)(*duty) = -MOTOR_OUTPWM_MAX;//Êä³öÏŞ·ù
+    if(*duty<-MOTOR_OUTPWM_MAX)(*duty) = -MOTOR_OUTPWM_MAX;//è¾“å‡ºé™å¹…
     if(*duty > 0)
     {
         ftm_pwm_duty(FTM0,FTM_CH3,*duty);
@@ -45,7 +45,7 @@ void Encoder_init()
 
 void Get_Speed()
 {
-    Motor.Current_Speed = ftm_quad_get(FTM1);          //»ñÈ¡FTM Õı½»½âÂë µÄÂö³åÊı(¸ºÊı±íÊ¾·´·½Ïò)
+    Motor.Current_Speed = ftm_quad_get(FTM1);          //è·å–FTM æ­£äº¤è§£ç  çš„è„‰å†²æ•°(è´Ÿæ•°è¡¨ç¤ºåæ–¹å‘)
     ftm_quad_clean(FTM1);
     if(viameter_on_flag)viameter += Motor.Current_Speed;
     else viameter = 0;
@@ -58,7 +58,7 @@ void Speed_PID_Ctrl()
     perror = this_error - Motor.Last_Error;
     Motor.OUTPWM += 0.01*(Motor.Kp*perror + this_error*Motor.Ki);
 #ifdef MOTOR_PID_UP_DATA
-    UP_Value[0] = (int32)Motor.Set_Speed;
+    UP_Value[2] = (int32)Motor.Set_Speed;
     UP_Value[1] = (int32)Motor.Current_Speed;
     UP_Value[2] = (int32)this_error;
     UP_Value[3] = (int32)Motor.OUTPWM;
